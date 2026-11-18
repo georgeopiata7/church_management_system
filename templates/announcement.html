@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Announcements</title>
+    <style>
+
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f5;
+    color: #333;
+}
+
+/* Main container */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    color: #14532d;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+header h2 {
+    color: #333;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+header p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Back button */
+.back-btn {
+    display: inline-block;
+    background-color: #14532d;
+    color: white;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.back-btn:hover {
+    background-color: #166534;
+}
+
+/* Announcements container */
+.announcements-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Announcement cards */
+.announcement-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #14532d;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.announcement-card h3 {
+    color: #14532d;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.announcement-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.announcement-card small {
+    color: #777;
+}
+
+/* Empty announcements message */
+.no-announcements {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    color: #777;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+
+    .container {
+        width: 95%;
+        margin: 25px auto;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    header h2 {
+        font-size: 21px;
+    }
+
+    .announcement-card {
+        padding: 18px;
+    }
+
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Church Management System</h1>
+            <h2>Church Announcements</h2>
+            <p>Stay updated with the latest church news and announcements.</p>
+
+            <a href="/dashboard" class="back-btn" >Back to Dashboard</a>
+
+        </header>
+
+        <div class="announcements-container">
+            {% for announcement in announcements %}
+
+            <div class="announcement-card"></div>
+
+            <h3>{{announcement.title}}</h3>
+            <p>{{announcement.message}}</p>
+
+            <small>
+                posted on: {{announcement.date_posted}}
+            </small>
+        </div>
+        {% else %}
+
+        <p class="no-announcement">
+            No announcement available at the moment.
+        </p>
+        {% endfor %}
+    </div>
+
+    
+</body>
+</html>

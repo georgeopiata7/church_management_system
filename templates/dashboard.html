@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Dashboard</title>
+
+    <style>
+
+/* General page styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f5;
+    color: #333;
+}
+
+/* Main container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Main heading */
+.container h1 {
+    color: #14532d;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Dashboard heading */
+.container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.container p {
+    color: #666;
+    margin-bottom: 35px;
+}
+
+/* Dashboard grid */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Dashboard buttons */
+.dashboard-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 130px;
+    padding: 25px;
+
+    background-color: white;
+    color: #14532d;
+
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 12px;
+    border: 1px solid #ddd;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.dashboard-btn:hover {
+    background-color: #14532d;
+    color: white;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .container h1 {
+        font-size: 25px;
+    }
+
+    .dashboard-btn {
+        min-height: 100px;
+    }
+
+}
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Church Management System</h1>
+        <h2>Main Dashboard</h2>
+        <p>Welcome to our church community</p>
+
+        <div class="dashboard">
+            <a href="/announcement" class="dashboard-btn">
+                View Announcements
+
+            </a>
+
+            <a href="/events" class="dashboard-btn">
+                Events and Activities
+
+            </a>
+
+
+            <a href="/leardership" class="dashboard-btn">
+                Church leardership
+
+            </a>
+
+
+            <a href="/offering" class="dashboard-btn">
+                Contibute offering
+            </a>
+
+            <a href="/prayer" class="dashboard-btn">
+                Request for prayers
+
+            </a>
+
+
+            <a href="/attendance" class="dashboard-btn">
+                Sign attendance
+
+            </a>
+
+        </div>
+    </div>
+    
+</body>
+</html>
