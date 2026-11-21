@@ -6,10 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-print("MYSQLHOST:", repr(os.getenv("MYSQLHOST")))
-print("MYSQLPORT:", repr(os.getenv("MYSQLPORT")))
-print("MYSQLUSER:", repr(os.getenv("MYSQLUSER")))
-print("MYSQLDATABASE:", repr(os.getenv("MYSQLDATABASE")))
+
 
 
 def connect_db():
